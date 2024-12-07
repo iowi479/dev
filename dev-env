@@ -59,9 +59,3 @@ copy $DEV_ENV_HOME/env/.zshrc $HOME/.zshrc
 copy $DEV_ENV_HOME/env/.zshenv $HOME/.zshenv
 copy $DEV_ENV_HOME/dev-env $HOME/.local/bin/dev-env
 copy $DEV_ENV_HOME/tmux-sessionizer/tmux-sessionizer $HOME/.local/bin/tmux-sessionizer
-
-# copy $DEV_ENV_HOME/tmux-sessionizer/tmux-sessionizer $HOME/.local/bin/tmux-sessionizer
-# copy $DEV_ENV_HOME/env/.zsh_profile $HOME/.zsh_profile
-# copy $DEV_ENV_HOME/env/.xprofile $HOME/.xprofile
-# copy $DEV_ENV_HOME/env/.tmux-sessionizer $HOME/.tmux-sessionizer
-# copy $DEV_ENV_HOME/tmux-dev-prod $HOME/.local/bin/tmux-dev-prod-course-ready

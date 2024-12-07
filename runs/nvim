@@ -3,9 +3,4 @@
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
 sudo rm -rf /opt/nvim
 sudo tar -C /opt -xzf nvim-linux64.tar.gz
-export PATH="$PATH:/opt/nvim-linux64/bin"
-
 rm nvim-linux64.tar.gz
-
-sudo rm -rf ~/.config/nvim
-git clone https://github.com/iowi479/nvim-config.git ~/.config/nvim
