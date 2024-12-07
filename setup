@@ -1,0 +1,14 @@
+#!/bin/bash
+
+sudo apt -y update
+sudo apt -y install git
+
+if [ ! -d $HOME/personal ]; then
+    mkdir $HOME/personal
+fi
+
+git clone https://github.com/iowi479/dev $HOME/personal/dev
+
+pushd $HOME/personal/dev
+./run
+popd
