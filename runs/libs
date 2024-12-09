@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo apt -y install build-essential python3 python3-pip curl tmux xclip
+sudo apt -y install build-essential python3 python3-pip curl tmux xclip gnome-tweaks
 
 # Install fzf
 # if /opt/fzf already exists, pull the latest version
@@ -11,3 +11,7 @@ else
   sudo git clone --depth 1 https://github.com/junegunn/fzf.git /opt/fzf 
 fi
 sudo /opt/fzf/install --key-bindings --completion --no-update-rc --no-bash --no-fish
+
+
+echo "Set Caps Lock as Ctrl"
+echo "Gnome Tweaks -> Additional Layout Options -> Ctrl position -> Caps Lock as Ctrl"
