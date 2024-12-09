@@ -10,4 +10,4 @@ if [ -d "/opt/fzf" ]; then
 else
   sudo git clone --depth 1 https://github.com/junegunn/fzf.git /opt/fzf 
 fi
-sudo /opt/fzf/install --key-bindings --completion --no-update-rc --no-bash --no-zsh --no-fish
+sudo /opt/fzf/install --key-bindings --completion --no-update-rc --no-bash --no-fish
