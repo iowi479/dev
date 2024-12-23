@@ -14,31 +14,19 @@ return {
 
 			-- Add/delete/replace surroundings (brackets, quotes, etc.)
 			--
+			--
 			-- - saiw) - [S]urround [A]dd [I]nner [W]ord [)]Paren
 			-- - sd'   - [S]urround [D]elete [']quotes
 			-- - sr)'  - [S]urround [R]eplace [)] [']
 			require("mini.surround").setup()
 
-			-- Simple and easy statusline.
-			--  You could remove this setup call if you don't like it,
-			--  and try some other statusline plugin
 			local statusline = require("mini.statusline")
 			statusline.setup({
-				-- Content of statusline as functions which return statusline string. See
-				-- `:h statusline` and code of default contents (used instead of `nil`).
 				content = {
-					-- Content for active window
 					active = nil,
-					-- Content for inactive window(s)
 					inactive = nil,
 				},
-
-				-- Whether to use icons by default
 				use_icons = false,
-
-				-- Whether to set Vim's settings for statusline (make it always shown with
-				-- 'laststatus' set to 2). To use global statusline in Neovim>=0.7.0, set
-				-- this to `false` and 'laststatus' to 3.
 				set_vim_settings = true,
 			})
 
@@ -49,11 +37,15 @@ return {
 			statusline.section_location = function()
 				return ""
 			end
-
-			-- ... and there is more!
-			--  Check out: https://github.com/echasnovski/mini.nvim
 		end,
 	},
 
-	"github/copilot.vim",
+	{
+		"github/copilot.vim",
+		config = function()
+			-- remap <C-V> to accept the next line
+			vim.keymap.set("i", "<C-V>", "<Plug>(copilot-accept-line)")
+			vim.g.copilot_no_tab_map = true
+		end,
+	},
 }

@@ -2,7 +2,9 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- show file in explorer
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>pv", function()
+	require("oil").open()
+end)
 
 -- move selected lines with indenting
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -10,7 +12,7 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 -- append next line to end of current line
 -- cursor stays at the current position
-vim.keymap.set("n", "JE", "mzJ`z")
+vim.keymap.set("n", "J", "mzJ`z")
 
 -- half-page-jumping but cursor stays in the middle
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
