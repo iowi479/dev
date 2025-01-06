@@ -69,18 +69,20 @@ vim.opt.cursorline = true
 
 -- format on save
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
-    callback = function()
-        vim.lsp.buf.format()
-    end,
+	pattern = "*",
+	callback = function(args)
+		require("conform").format({ bufnr = args.bufnr })
+		-- vim.lsp.buf.format()
+	end,
 })
 
 -- Highlight when yanking (copying) text
 --  Try it with `yap` in normal mode
 --  See `:help vim.highlight.on_yank()`
 vim.api.nvim_create_autocmd("TextYankPost", {
-    desc = "Highlight when yanking (copying) text",
-    group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
-    callback = function()
-        vim.highlight.on_yank()
-    end,
+	desc = "Highlight when yanking (copying) text",
+	group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
+	callback = function()
+		vim.highlight.on_yank()
+	end,
 })

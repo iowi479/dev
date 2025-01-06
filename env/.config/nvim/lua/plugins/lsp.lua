@@ -74,7 +74,10 @@ return {
 					map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
 
 					-- format the current buffer
-					map("<leader>f", vim.lsp.buf.format, "[F]ormat")
+					map("<leader>f", function()
+						require("conform").format()
+						-- vim.lsp.buf.format()
+					end, "[F]ormat")
 
 					-- The following two autocommands are used to highlight references of the
 					-- word under your cursor when your cursor rests there for a little while.
