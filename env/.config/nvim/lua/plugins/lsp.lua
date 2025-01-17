@@ -17,13 +17,6 @@ return {
 				callback = function(event)
 					-- enable inlay hints
 					vim.lsp.inlay_hint.enable(true, { bufnr = event.buf })
-
-					-- NOTE: Remember that lua is a real programming language, and as such it is possible
-					-- to define small helper and utility functions so you don't have to repeat yourself
-					-- many times.
-					--
-					-- In this case, we create a function that lets us more easily define mappings specific
-					-- for LSP related items. It sets the mode, buffer and description for us each time.
 					local map = function(keys, func, desc)
 						vim.keymap.set("n", keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
 					end
@@ -178,6 +171,8 @@ return {
 						require("lspconfig")[server_name].setup(server)
 					end,
 				},
+				ensure_installed = ensure_installed,
+				automatic_installation = true,
 			})
 		end,
 	},
