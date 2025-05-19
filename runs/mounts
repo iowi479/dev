@@ -1,0 +1,5 @@
+#!/bin/bash
+
+sudo apt -y install ca-certificates davfs2 cifs-utils
+
+sudo usermod -aG davfs2 simon 
