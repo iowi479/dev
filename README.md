@@ -41,7 +41,7 @@ https://nextcloud.alle-schindlers.de/remote.php/dav/files/<username>/ /media/nex
 ```
 
 ## installing dependencies
-use the ```run script to install dependencies
+use the ```run``` script to install dependencies
 ```bash
 ./run.sh
 ```
