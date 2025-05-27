@@ -26,7 +26,7 @@ chmod 600 ~/.davfs2/secrets
 ```
 
 The ```/etc/fstab``` has to be appended with: (replace ```<username>```)
-```
+```bash
 sudo echo "//truenas.alle-schindlers.de/Daten /media/daten cifs credentials=/home/simon/.smbcredentials,uid=1000,gid=1000,auto,rw 0 0 https://nextcloud.alle-schindlers.de/remote.php/dav/files/<username>/ /media/nextcloud davfs _netdev,rw,auto,user,uid=1000,gid=1000 0 0" > /etc/fstab
 ```
 
