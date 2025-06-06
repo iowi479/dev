@@ -30,6 +30,11 @@ The ```/etc/fstab``` has to be appended with: (replace ```<username>```)
 sudo echo "//truenas.alle-schindlers.de/Daten /media/daten cifs credentials=/home/simon/.smbcredentials,uid=1000,gid=1000,auto,rw 0 0 https://nextcloud.alle-schindlers.de/remote.php/dav/files/<username>/ /media/nextcloud davfs _netdev,rw,auto,user,uid=1000,gid=1000 0 0" > /etc/fstab
 ```
 
+For mounting the Steam-Library obtain the drive-uuid: (replace ```<drive-uuid>```)
+```bash
+sudo blkid | grep -i "games"
+sudo echo "/dev/disk/by-uuid/<drive-uuid> /media/games ext4 defaults" > /etc/fstab
+```
 Finally open ```Startup Applications``` and add an entry for the script: ```~/.config/mounter/nextcloud.sh```
 
 ## Installing dependencies
