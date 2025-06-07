@@ -3,3 +3,11 @@
 sudo apt -y install ca-certificates davfs2 cifs-utils
 
 sudo usermod -aG davfs2 simon 
+
+sudo mkdir /media/nextcloud
+sudo chmod 777 /media/nextcloud
+sudo chown 1000:1000 /media/nextcloud
+
+sudo mkdir /media/truenas
+sudo chmod 777 /media/truenas
+sudo chown 1000:1000 /media/truenas
